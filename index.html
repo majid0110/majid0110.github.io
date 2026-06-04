@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Majid Khan — AI/ML Engineer & Researcher. Generative AI, Healthcare Data Synthesis, Big Data.">
+  <meta name="description" content="Majid Khan — AI/ML Engineer & GAN Researcher building intelligent systems at the intersection of healthcare AI, big data, and generative models.">
   <meta name="author" content="Majid Khan">
   <title>Majid Khan — AI/ML Engineer & Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-wrap">
-      <a href="#top" class="logo" aria-label="Home"><span>[</span>MK<span>]</span></a>
+      <a href="#top" class="logo" aria-label="Majid Khan — Home">Majid</a>
       <ul id="nav-menu" role="list">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -24,9 +24,9 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#publications">Papers</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact" class="nav-btn">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button id="menu-btn" aria-label="Menu" aria-expanded="false">
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -34,119 +34,113 @@
 
   <!-- HERO -->
   <header id="top">
-    <div class="hero-bg">
-      <div class="orb o1"></div>
-      <div class="orb o2"></div>
-      <div class="orb o3"></div>
-    </div>
-    <div class="hero-grid-pattern"></div>
-    <div class="container hero-inner">
-      <div class="avail-badge">
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="container hero-content">
+      <div class="hero-badge">
         <span class="pulse-dot"></span>
-        Available for Research Collaboration
+        Open to Research Collaboration
       </div>
-      <p class="hero-greeting">Hi, I'm</p>
-      <h1>Majid<br><span class="name-grad">Khan</span></h1>
-      <div class="typer-row">
-        <span class="typer-arrow">›</span>
-        <span id="typer"></span><span class="caret" aria-hidden="true"></span>
+      <p class="hero-eye">Hello, I'm</p>
+      <h1>Majid<br><em>Khan</em></h1>
+      <div class="typer-wrap">
+        <span class="ty-arrow">›</span>
+        <span id="typer"></span><span class="ty-cur" aria-hidden="true">|</span>
       </div>
-      <p class="hero-bio">
+      <p class="hero-lead">
         AI/ML Engineer &amp; Researcher building intelligent systems at the frontier of
-        <em>Generative AI</em>, <em>Healthcare Data Synthesis</em>, and <em>Big Data Engineering</em>.
+        <strong>Generative AI</strong>, <strong>Healthcare Data Synthesis</strong>,
+        and <strong>Big Data Engineering</strong>.
       </p>
-      <div class="hero-btns">
+      <div class="hero-actions">
         <a href="#projects" class="btn-primary">
           View My Work
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
         </a>
-        <a href="#contact" class="btn-outline">Get In Touch</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
       </div>
       <div class="hero-stats">
-        <div>
+        <div class="hs">
           <strong><span class="count" data-to="4">4</span><sup>+</sup></strong>
           <span>Years Exp.</span>
         </div>
-        <div class="stat-div"></div>
-        <div>
+        <div class="hs-div"></div>
+        <div class="hs">
           <strong><span class="count" data-to="6">6</span></strong>
           <span>Projects</span>
         </div>
-        <div class="stat-div"></div>
-        <div>
+        <div class="hs-div"></div>
+        <div class="hs">
           <strong><span class="count" data-to="2">2</span></strong>
           <span>MSc Degrees</span>
         </div>
       </div>
     </div>
-    <div class="scroll-hint">
-      <div class="scroll-track"><div class="scroll-thumb"></div></div>
-      <span>Scroll</span>
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="sc-line"></div>
+      <span>scroll</span>
     </div>
   </header>
 
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="sec-label">About Me</div>
-      <h2 class="sec-title">Bridging Research <span class="grad">&amp; Engineering</span></h2>
-      <div class="about-cols">
-        <div class="about-text">
-          <p>I'm an AI/ML Engineer and researcher with dual Master's degrees — currently pursuing <strong>MSc Data Science at NUST MISIS, Moscow</strong> and completing <strong>MSc Computer Science at AWKUM, Pakistan</strong>, where my thesis focuses on Generative Adversarial Networks for privacy-preserving healthcare data synthesis.</p>
-          <p>With 4+ years spanning ML engineering, full-stack development, and certified cybersecurity, I build production-grade AI systems while exploring novel deep learning architectures — currently Conv1DTranspose generators with InceptionTime discriminators for physiological signal synthesis.</p>
-          <div class="chips">
-            <span class="chip chip-indigo">CEH Certified</span>
-            <span class="chip chip-gold">MSc Data Science</span>
-            <span class="chip chip-violet">GAN Researcher</span>
-            <span class="chip chip-green">Open to Collab</span>
+      <div class="sec-tag reveal">About Me</div>
+      <div class="about-grid">
+        <div class="about-main">
+          <h2 class="sec-title reveal">Bridging Research<br><em>&amp; Engineering</em></h2>
+          <div class="about-body reveal" data-delay="80">
+            <p>I'm an AI/ML Engineer and researcher with dual Master's degrees — currently pursuing <strong>MSc Data Science at NUST MISIS, Moscow</strong> and completing <strong>MSc Computer Science at AWKUM, Pakistan</strong>, where my thesis focuses on Generative Adversarial Networks for privacy-preserving healthcare data synthesis.</p>
+            <p>With 4+ years spanning ML engineering, full-stack development, and certified cybersecurity, I build production-grade AI systems while exploring novel deep learning architectures — currently Conv1DTranspose generators with InceptionTime discriminators for physiological signal synthesis.</p>
           </div>
-          <div class="about-links">
+          <div class="about-chips reveal" data-delay="140">
+            <span class="chip c-amber">CEH Certified</span>
+            <span class="chip c-green">MSc Data Science</span>
+            <span class="chip c-rose">GAN Researcher</span>
+            <span class="chip c-sky">Open to Collab</span>
+          </div>
+          <div class="about-links reveal" data-delay="190">
             <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="alink">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              github.com/majid0110
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
             </a>
             <a href="https://linkedin.com/in/majid0110" target="_blank" rel="noopener" class="alink">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              linkedin.com/in/majid0110
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
             </a>
             <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="alink">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-              Google Scholar
-            </a>
-            <a href="https://kaggle.com/majid0110" target="_blank" rel="noopener" class="alink">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.336z"/></svg>
-              Kaggle
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              Scholar
             </a>
           </div>
         </div>
-        <div class="edu-side">
-          <h3 class="side-title">Education</h3>
-          <div class="edu-timeline">
-            <div class="edu-entry">
-              <div class="edu-dot-wrap"><div class="edu-dot active"></div></div>
+        <div class="edu-col reveal" data-delay="120">
+          <h3 class="col-head">Education</h3>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-marker active"></div>
               <div>
                 <span class="edu-yr">2025 — 2027</span>
-                <h4>MSc Data Science</h4>
-                <p class="edu-school">NUST MISIS, Moscow, Russia</p>
-                <p class="edu-note">Advanced ML · Big Data · Research Methods</p>
+                <strong>MSc Data Science</strong>
+                <span class="edu-inst">NUST MISIS · Moscow, Russia</span>
+                <span class="edu-note">Advanced ML · Big Data · Research</span>
               </div>
             </div>
-            <div class="edu-entry">
-              <div class="edu-dot-wrap"><div class="edu-dot"></div></div>
+            <div class="edu-item">
+              <div class="edu-marker"></div>
               <div>
                 <span class="edu-yr">2023 — 2025</span>
-                <h4>MSc Computer Science</h4>
-                <p class="edu-school">AWKUM, Pakistan</p>
-                <p class="edu-note">Thesis: Generative AI &amp; Healthcare Data Synthesis</p>
+                <strong>MSc Computer Science</strong>
+                <span class="edu-inst">AWKUM · Pakistan</span>
+                <span class="edu-note">Thesis: GANs for Healthcare</span>
               </div>
             </div>
-            <div class="edu-entry last">
-              <div class="edu-dot-wrap"><div class="edu-dot"></div></div>
+            <div class="edu-item last">
+              <div class="edu-marker"></div>
               <div>
                 <span class="edu-yr">2018 — 2022</span>
-                <h4>BSc Software Engineering</h4>
-                <p class="edu-school">UET Mardan, Pakistan</p>
-                <p class="edu-note">Computer Software Engineering</p>
+                <strong>BSc Software Engineering</strong>
+                <span class="edu-inst">UET Mardan · Pakistan</span>
+                <span class="edu-note">Computer Software Engineering</span>
               </div>
             </div>
           </div>
@@ -156,77 +150,76 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="alt">
+  <section id="skills" class="alt-s">
     <div class="container">
-      <div class="sec-label">Technical Skills</div>
-      <h2 class="sec-title">Tools &amp; <span class="grad">Technologies</span></h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon ci-blue">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      <div class="sec-tag reveal">Technical Skills</div>
+      <h2 class="sec-title reveal">Tools &amp; <em>Technologies</em></h2>
+      <div class="skills-grid">
+        <div class="sk-group reveal">
+          <div class="sk-head">
+            <span class="sk-ic i-amber"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></span>
+            <h3>AI / Machine Learning</h3>
           </div>
-          <h3>AI / Machine Learning</h3>
-          <div class="tags">
-            <span class="t t-hi">PyTorch</span><span class="t t-hi">GANs</span>
-            <span class="t">TensorFlow</span><span class="t">scikit-learn</span>
-            <span class="t">Keras</span><span class="t">OpenCV</span>
-            <span class="t">Pandas</span><span class="t">NumPy</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon ci-violet">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
-          </div>
-          <h3>Programming Languages</h3>
-          <div class="tags">
-            <span class="t t-hi">Python</span><span class="t">JavaScript</span>
-            <span class="t">TypeScript</span><span class="t">PHP</span>
-            <span class="t">SQL</span><span class="t">C++</span>
+          <div class="sk-tags">
+            <span class="st hi">PyTorch</span><span class="st hi">GANs</span>
+            <span class="st">TensorFlow</span><span class="st">scikit-learn</span>
+            <span class="st">Keras</span><span class="st">OpenCV</span>
+            <span class="st">Pandas</span><span class="st">NumPy</span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-icon ci-cyan">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+        <div class="sk-group reveal" data-delay="80">
+          <div class="sk-head">
+            <span class="sk-ic i-rose"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg></span>
+            <h3>Programming Languages</h3>
           </div>
-          <h3>Big Data</h3>
-          <div class="tags">
-            <span class="t t-hi">Apache Kafka</span><span class="t">Apache Spark</span>
-            <span class="t">Hadoop</span><span class="t">Hive</span>
-            <span class="t">ETL Pipelines</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon ci-blue">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-          </div>
-          <h3>Web &amp; DevOps</h3>
-          <div class="tags">
-            <span class="t">REST APIs</span><span class="t t-hi">Docker</span>
-            <span class="t">Angular</span><span class="t">CodeIgniter</span>
-            <span class="t">Firebase</span><span class="t">Jenkins</span>
+          <div class="sk-tags">
+            <span class="st hi">Python</span><span class="st">JavaScript</span>
+            <span class="st">TypeScript</span><span class="st">PHP</span>
+            <span class="st">SQL</span><span class="st">C++</span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-icon ci-gold">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        <div class="sk-group reveal" data-delay="160">
+          <div class="sk-head">
+            <span class="sk-ic i-sky"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></span>
+            <h3>Big Data</h3>
           </div>
-          <h3>Cybersecurity</h3>
-          <div class="tags">
-            <span class="t t-gold">CEH Certified</span>
-            <span class="t">Penetration Testing</span>
-            <span class="t">Burp Suite</span><span class="t">Acunetix</span>
-            <span class="t">Security+</span>
+          <div class="sk-tags">
+            <span class="st hi">Apache Kafka</span><span class="st">Apache Spark</span>
+            <span class="st">Hadoop</span><span class="st">Hive</span>
+            <span class="st">ETL Pipelines</span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-icon ci-violet">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+        <div class="sk-group reveal">
+          <div class="sk-head">
+            <span class="sk-ic i-amber"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></span>
+            <h3>Web &amp; DevOps</h3>
           </div>
-          <h3>Data Visualization</h3>
-          <div class="tags">
-            <span class="t">Matplotlib</span><span class="t t-hi">Plotly</span>
-            <span class="t">Seaborn</span><span class="t">Tableau</span>
-            <span class="t">Statistical Analysis</span>
+          <div class="sk-tags">
+            <span class="st hi">Docker</span><span class="st">REST APIs</span>
+            <span class="st">Angular</span><span class="st">Firebase</span>
+            <span class="st">Jenkins</span><span class="st">CodeIgniter</span>
+          </div>
+        </div>
+        <div class="sk-group reveal" data-delay="80">
+          <div class="sk-head">
+            <span class="sk-ic i-green"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></span>
+            <h3>Cybersecurity</h3>
+          </div>
+          <div class="sk-tags">
+            <span class="st hi green">CEH Certified</span>
+            <span class="st">Penetration Testing</span>
+            <span class="st">Burp Suite</span>
+            <span class="st">Acunetix</span><span class="st">OWASP</span>
+          </div>
+        </div>
+        <div class="sk-group reveal" data-delay="160">
+          <div class="sk-head">
+            <span class="sk-ic i-rose"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg></span>
+            <h3>Data Visualization</h3>
+          </div>
+          <div class="sk-tags">
+            <span class="st hi">Plotly</span><span class="st">Matplotlib</span>
+            <span class="st">Seaborn</span><span class="st">Tableau</span>
           </div>
         </div>
       </div>
@@ -236,169 +229,142 @@
   <!-- RESEARCH -->
   <section id="research">
     <div class="container">
-      <div class="sec-label">Research</div>
-      <h2 class="sec-title">Research <span class="grad">Interests</span></h2>
-      <p class="sec-sub">Exploring frontiers of AI to solve real-world problems across healthcare, data engineering, and cybersecurity.</p>
-      <div class="grid-3">
-        <div class="card card-research">
-          <div class="r-num">01</div>
+      <div class="sec-tag reveal">Research</div>
+      <h2 class="sec-title reveal">Research <em>Interests</em></h2>
+      <p class="sec-sub reveal" data-delay="80">Exploring frontiers of AI to solve real-world problems across healthcare, data engineering, and cybersecurity.</p>
+      <div class="r-grid">
+        <div class="r-card reveal">
+          <span class="r-num">01</span>
           <h3>Generative AI &amp; GANs</h3>
           <p>Conv1DTranspose generators paired with InceptionTime discriminators for high-fidelity physiological signal synthesis in privacy-preserving healthcare.</p>
-          <div class="tags"><span class="t">GANs</span><span class="t">Conv1D</span><span class="t">Healthcare</span></div>
+          <div class="r-tags"><span>GANs</span><span>Conv1D</span><span>Healthcare</span></div>
         </div>
-        <div class="card card-research">
-          <div class="r-num">02</div>
+        <div class="r-card reveal" data-delay="80">
+          <span class="r-num">02</span>
           <h3>Deep Learning Architectures</h3>
           <p>CNN, RNN, and Transformer architectures for sequential time-series medical data processing, multi-class signal classification, and anomaly detection.</p>
-          <div class="tags"><span class="t">CNNs</span><span class="t">Transformers</span><span class="t">Time-Series</span></div>
+          <div class="r-tags"><span>CNNs</span><span>Transformers</span><span>Time-Series</span></div>
         </div>
-        <div class="card card-research">
-          <div class="r-num">03</div>
+        <div class="r-card reveal" data-delay="160">
+          <span class="r-num">03</span>
           <h3>Healthcare AI</h3>
           <p>Privacy-preserving synthetic EHR generation, physiological signal processing, and ML-driven diagnostics that respect patient data confidentiality.</p>
-          <div class="tags"><span class="t">EHR</span><span class="t">Privacy</span><span class="t">Signal Processing</span></div>
+          <div class="r-tags"><span>EHR</span><span>Privacy</span><span>Signals</span></div>
         </div>
-        <div class="card card-research">
-          <div class="r-num">04</div>
+        <div class="r-card reveal">
+          <span class="r-num">04</span>
           <h3>Big Data &amp; Analytics</h3>
           <p>Real-time data streaming architectures with Apache Kafka and Spark. Designing scalable ETL pipelines for large-scale distributed data analytics.</p>
-          <div class="tags"><span class="t">Kafka</span><span class="t">Spark</span><span class="t">ETL</span></div>
+          <div class="r-tags"><span>Kafka</span><span>Spark</span><span>ETL</span></div>
         </div>
-        <div class="card card-research">
-          <div class="r-num">05</div>
+        <div class="r-card reveal" data-delay="80">
+          <span class="r-num">05</span>
           <h3>Cybersecurity Research</h3>
           <p>Penetration testing, AI-driven vulnerability assessment, and threat intelligence. CEH certified with hands-on enterprise security audit experience.</p>
-          <div class="tags"><span class="t">PenTest</span><span class="t">CEH</span><span class="t">Threat Intel</span></div>
+          <div class="r-tags"><span>PenTest</span><span>CEH</span><span>Threat Intel</span></div>
         </div>
-        <div class="card card-research">
-          <div class="r-num">06</div>
+        <div class="r-card reveal" data-delay="160">
+          <span class="r-num">06</span>
           <h3>Full Stack &amp; Cloud</h3>
           <p>Scalable RESTful microservices and cloud-native applications. Production CI/CD pipelines with Docker, Firebase, and Jenkins for enterprise deployment.</p>
-          <div class="tags"><span class="t">REST APIs</span><span class="t">Docker</span><span class="t">CI/CD</span></div>
+          <div class="r-tags"><span>REST APIs</span><span>Docker</span><span>CI/CD</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="alt">
+  <section id="projects" class="alt-s">
     <div class="container">
-      <div class="sec-label">Projects</div>
-      <h2 class="sec-title">Featured <span class="grad">Work</span></h2>
-      <p class="sec-sub">Research projects and engineering work spanning AI, data systems, full-stack development, and cybersecurity.</p>
+      <div class="sec-tag reveal">Projects</div>
+      <h2 class="sec-title reveal">Featured <em>Work</em></h2>
+      <p class="sec-sub reveal" data-delay="80">Research and engineering across AI, data systems, full-stack, and cybersecurity.</p>
 
-      <!-- Featured -->
-      <div class="featured-card">
-        <div class="feat-label">
-          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-          Featured Research Project
+      <div class="feat-proj reveal" data-delay="120">
+        <div class="fp-label">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          Featured Research
         </div>
-        <div class="feat-body">
-          <div class="feat-text">
-            <span class="feat-num">01</span>
+        <div class="fp-body">
+          <div class="fp-text">
             <h3>GAN for Healthcare Data Synthesis</h3>
-            <p>Master's thesis developing a novel GAN architecture for synthesizing high-fidelity physiological signals. A Conv1DTranspose generator trains adversarially against an InceptionTime discriminator to produce realistic ECG and EEG data — enabling privacy-preserving medical AI training without exposing real patient records.</p>
-            <div class="feat-grid-meta">
-              <div><span class="meta-label">Role</span><span class="meta-val">Lead Researcher</span></div>
-              <div><span class="meta-label">Institution</span><span class="meta-val">AWKUM, Pakistan</span></div>
-              <div><span class="meta-label">Status</span><span class="badge-green">In Progress</span></div>
+            <p>Master's thesis developing a novel GAN architecture for synthesizing high-fidelity physiological signals. A Conv1DTranspose generator trains adversarially against an InceptionTime discriminator to produce realistic ECG and EEG data — enabling privacy-preserving medical AI without exposing real patient records.</p>
+            <div class="fp-meta">
+              <div><span class="mk">Role</span><span class="mv">Lead Researcher</span></div>
+              <div><span class="mk">Institution</span><span class="mv">AWKUM, Pakistan</span></div>
+              <div><span class="mk">Status</span><span class="b-progress">In Progress</span></div>
             </div>
-            <div class="tags" style="margin-top:18px">
-              <span class="t t-hi">Python</span><span class="t t-hi">PyTorch</span>
-              <span class="t">GANs</span><span class="t">Conv1DTranspose</span><span class="t">InceptionTime</span>
+            <div class="fp-tags">
+              <span class="st hi">Python</span><span class="st hi">PyTorch</span>
+              <span class="st">GANs</span><span class="st">Conv1DTranspose</span><span class="st">InceptionTime</span>
             </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="btn-sm-outline">
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="btn-ghost sm">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </a>
           </div>
-          <div class="feat-arch" aria-label="GAN architecture diagram">
+          <div class="fp-arch">
             <div class="arch-flow">
-              <div class="arch-block ab-1"><span>Latent Space</span><small>z ~ N(0,1)</small></div>
-              <div class="arch-arrow">↓</div>
-              <div class="arch-block ab-2"><span>Generator</span><small>Conv1DTranspose</small></div>
-              <div class="arch-arrow">↓</div>
-              <div class="arch-block ab-3"><span>Synthetic Signal</span><small>ECG / EEG</small></div>
-              <div class="arch-arrow">↓</div>
-              <div class="arch-block ab-4"><span>Discriminator</span><small>InceptionTime</small></div>
-              <div class="arch-arrow">↓</div>
-              <div class="arch-block ab-5"><span>Real / Fake</span><small>Adversarial Loss</small></div>
-              <div class="arch-fb">↩ Gradient Feedback Loop</div>
+              <div class="af-block b1"><span>Latent Space</span><small>z ~ N(0,1)</small></div>
+              <div class="af-arrow">↓</div>
+              <div class="af-block b2"><span>Generator</span><small>Conv1DTranspose</small></div>
+              <div class="af-arrow">↓</div>
+              <div class="af-block b3"><span>Synthetic Signal</span><small>ECG / EEG</small></div>
+              <div class="af-arrow">↓</div>
+              <div class="af-block b4"><span>Discriminator</span><small>InceptionTime</small></div>
+              <div class="af-arrow">↓</div>
+              <div class="af-block b5"><span>Real / Fake</span><small>Adversarial Loss</small></div>
+              <div class="af-loop">↩ Gradient Feedback Loop</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Grid -->
-      <div class="grid-3" style="margin-top:24px">
-        <div class="card proj-card">
-          <div class="proj-head">
-            <div class="proj-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M7 12h4m1 8-4-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-4 4z"/></svg>
-            </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="gh-link" aria-label="View on GitHub">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+      <div class="proj-grid">
+        <div class="p-card reveal">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 8h10M7 12h4m1 8-4-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-4 4z"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
           </div>
           <h3>Real-Time Tweet Analysis</h3>
-          <p>Live tweet capture pipeline with NLP sentiment analysis, emotion detection, and trend monitoring at scale using Twitter Streaming API.</p>
-          <div class="tags"><span class="t">Python</span><span class="t">Twitter API</span><span class="t">NLP</span><span class="t">Sentiment</span></div>
+          <p>Live tweet capture pipeline with NLP sentiment analysis, emotion detection, and trend monitoring at scale.</p>
+          <div class="pc-tags"><span>Python</span><span>Twitter API</span><span>NLP</span></div>
         </div>
-
-        <div class="card proj-card">
-          <div class="proj-head">
-            <div class="proj-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg>
-            </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="gh-link" aria-label="View on GitHub">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+        <div class="p-card reveal" data-delay="80">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
           </div>
           <h3>Kafka Streaming System</h3>
-          <p>High-throughput real-time message streaming with Apache Kafka achieving sub-100ms latency for large-scale distributed data pipelines.</p>
-          <div class="tags"><span class="t">Kafka</span><span class="t">Python</span><span class="t">Streaming</span><span class="t">Distributed</span></div>
+          <p>High-throughput real-time message streaming achieving sub-100ms latency for large-scale distributed data pipelines.</p>
+          <div class="pc-tags"><span>Kafka</span><span>Python</span><span>Distributed</span></div>
         </div>
-
-        <div class="card proj-card">
-          <div class="proj-head">
-            <div class="proj-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg>
-            </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="gh-link" aria-label="View on GitHub">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+        <div class="p-card reveal" data-delay="160">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
           </div>
           <h3>Hospital Management Dashboard</h3>
-          <p>Full-featured web platform for patient records, appointments, billing, and staff management with role-based access control.</p>
-          <div class="tags"><span class="t">PHP</span><span class="t">CodeIgniter</span><span class="t">MySQL</span></div>
+          <p>Full-featured platform for patient records, appointments, billing, and staff with role-based access control.</p>
+          <div class="pc-tags"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
         </div>
-
-        <div class="card proj-card">
-          <div class="proj-head">
-            <div class="proj-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
-            </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="gh-link" aria-label="View on GitHub">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+        <div class="p-card reveal">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
           </div>
           <h3>Car Washing Service App</h3>
-          <p>Cross-platform booking application with real-time scheduling, Stripe payment integration, and live push notifications.</p>
-          <div class="tags"><span class="t">Angular</span><span class="t">Firebase</span><span class="t">TypeScript</span></div>
+          <p>Cross-platform booking app with real-time scheduling, Stripe payments, and live push notifications.</p>
+          <div class="pc-tags"><span>Angular</span><span>Firebase</span><span>TypeScript</span></div>
         </div>
-
-        <div class="card proj-card">
-          <div class="proj-head">
-            <div class="proj-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg>
-            </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="gh-link" aria-label="View on GitHub">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+        <div class="p-card reveal" data-delay="80">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
           </div>
           <h3>ProViewGolf REST API</h3>
-          <p>Scalable RESTful API serving golf course data, player statistics, and tournament management with optimized PostgreSQL and Redis caching.</p>
-          <div class="tags"><span class="t">PHP</span><span class="t">CodeIgniter</span><span class="t">PostgreSQL</span></div>
+          <p>Scalable RESTful API for golf course data and tournament management with PostgreSQL and Redis caching.</p>
+          <div class="pc-tags"><span>PHP</span><span>PostgreSQL</span><span>Redis</span></div>
         </div>
       </div>
     </div>
@@ -407,128 +373,90 @@
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="container">
-      <div class="sec-label">Publications</div>
-      <h2 class="sec-title">Research <span class="grad">Papers</span></h2>
-      <div class="pub-card">
-        <div class="pub-top-row">
-          <span class="badge-review">Under Review · 2025</span>
+      <div class="sec-tag reveal">Publications</div>
+      <h2 class="sec-title reveal">Research <em>Papers</em></h2>
+      <div class="pub-card reveal" data-delay="100">
+        <div class="pub-top">
+          <span class="pub-status">Under Review · 2025</span>
           <div class="pub-links">
-            <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="btn-sm-outline">Google Scholar</a>
-            <a href="https://researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener" class="btn-sm-outline">ResearchGate</a>
+            <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="btn-ghost sm">Google Scholar</a>
+            <a href="https://researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener" class="btn-ghost sm">ResearchGate</a>
           </div>
         </div>
         <h3 class="pub-title">High-Fidelity Physiological Signal Synthesis Using Generative Adversarial Networks with Conv1DTranspose Generator and InceptionTime Discriminator</h3>
-        <p class="pub-by"><strong>Majid Khan</strong> &amp; Rahim Khan <span class="pub-aff">— Dept. of Computer Science, AWKUM, Pakistan</span></p>
-        <p class="pub-abs">This research presents a novel GAN framework for synthesizing realistic physiological signals (ECG, EEG) using a Conv1DTranspose generator paired with an InceptionTime discriminator. The work addresses critical data scarcity in medical AI while fully preserving patient privacy through high-quality synthetic generation.</p>
-        <div class="tags" style="margin-top:18px">
-          <span class="t">Generative Adversarial Networks</span>
-          <span class="t">Signal Synthesis</span>
-          <span class="t">Conv1DTranspose</span>
-          <span class="t">InceptionTime</span>
-          <span class="t">Healthcare AI</span>
+        <p class="pub-authors"><strong>Majid Khan</strong> &amp; Rahim Khan <span class="pub-affil">— Dept. of Computer Science, AWKUM, Pakistan</span></p>
+        <p class="pub-abstract">This research presents a novel GAN framework for synthesizing realistic physiological signals (ECG, EEG) using a Conv1DTranspose generator paired with an InceptionTime discriminator. The work addresses critical data scarcity in medical AI while fully preserving patient privacy through high-quality synthetic generation.</p>
+        <div class="pub-kw">
+          <span>Generative Adversarial Networks</span><span>Signal Synthesis</span>
+          <span>Conv1DTranspose</span><span>InceptionTime</span><span>Healthcare AI</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="alt">
+  <section id="experience" class="alt-s">
     <div class="container">
-      <div class="sec-label">Experience</div>
-      <h2 class="sec-title">Professional <span class="grad">Journey</span></h2>
+      <div class="sec-tag reveal">Experience</div>
+      <h2 class="sec-title reveal">Professional <em>Journey</em></h2>
       <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-side">
-            <div class="tl-dot tl-active"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card card">
-            <div class="tl-head">
-              <div>
-                <h3>ML Engineer / Programmer</h3>
-                <p class="tl-co">RegexByte IT Solutions</p>
-              </div>
-              <div class="tl-right">
-                <span class="tl-period">Jan 2023 — Present</span>
-                <span class="badge-now">Current</span>
-              </div>
+        <div class="tl-item reveal">
+          <div class="tl-side"><div class="tl-dot active"></div><div class="tl-track"></div></div>
+          <div class="tl-body">
+            <div class="tl-hd">
+              <div><h3>ML Engineer / Programmer</h3><span class="tl-co">RegexByte IT Solutions</span></div>
+              <div class="tl-right"><span class="tl-period">Jan 2023 — Present</span><span class="tl-now">Current</span></div>
             </div>
-            <ul class="tl-list">
+            <ul class="tl-ul">
               <li>Designed and deployed production ML pipelines for real-world data processing</li>
               <li>Led full-stack development of AI-integrated web applications and REST APIs</li>
               <li>Conducted applied AI/ML research and mentored junior engineers</li>
               <li>Built microservices with Docker and Jenkins CI/CD pipelines</li>
             </ul>
-            <div class="tags"><span class="t">Python</span><span class="t">PyTorch</span><span class="t">Docker</span><span class="t">REST APIs</span><span class="t">Jenkins</span></div>
+            <div class="tl-tags"><span>Python</span><span>PyTorch</span><span>Docker</span><span>REST APIs</span><span>Jenkins</span></div>
           </div>
         </div>
-
-        <div class="tl-item">
-          <div class="tl-side">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card card">
-            <div class="tl-head">
-              <div>
-                <h3>Penetration Tester</h3>
-                <p class="tl-co">Secure Purple</p>
-              </div>
-              <div class="tl-right">
-                <span class="tl-period">Feb 2024 — Jul 2024</span>
-              </div>
+        <div class="tl-item reveal" data-delay="80">
+          <div class="tl-side"><div class="tl-dot"></div><div class="tl-track"></div></div>
+          <div class="tl-body">
+            <div class="tl-hd">
+              <div><h3>Penetration Tester</h3><span class="tl-co">Secure Purple</span></div>
+              <div class="tl-right"><span class="tl-period">Feb 2024 — Jul 2024</span></div>
             </div>
-            <ul class="tl-list">
+            <ul class="tl-ul">
               <li>Conducted penetration testing for UET Peshawar and PEC</li>
               <li>Performed threat intelligence analysis and vulnerability assessments</li>
               <li>Delivered security reports with detailed remediation roadmaps</li>
             </ul>
-            <div class="tags"><span class="t">Burp Suite</span><span class="t">Acunetix</span><span class="t">Kali Linux</span><span class="t">OWASP</span></div>
+            <div class="tl-tags"><span>Burp Suite</span><span>Acunetix</span><span>Kali Linux</span><span>OWASP</span></div>
           </div>
         </div>
-
-        <div class="tl-item">
-          <div class="tl-side">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card card">
-            <div class="tl-head">
-              <div>
-                <h3>Programmer Intern</h3>
-                <p class="tl-co">Mindstorm Studios</p>
-              </div>
-              <div class="tl-right">
-                <span class="tl-period">Jul 2022 — Sep 2022</span>
-              </div>
+        <div class="tl-item reveal" data-delay="80">
+          <div class="tl-side"><div class="tl-dot"></div><div class="tl-track"></div></div>
+          <div class="tl-body">
+            <div class="tl-hd">
+              <div><h3>Programmer Intern</h3><span class="tl-co">Mindstorm Studios</span></div>
+              <div class="tl-right"><span class="tl-period">Jul 2022 — Sep 2022</span></div>
             </div>
-            <ul class="tl-list">
+            <ul class="tl-ul">
               <li>Built responsive full-stack web applications with modern UI/UX</li>
               <li>Optimized backend performance and database query efficiency</li>
             </ul>
-            <div class="tags"><span class="t">JavaScript</span><span class="t">PHP</span><span class="t">MySQL</span></div>
+            <div class="tl-tags"><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
           </div>
         </div>
-
-        <div class="tl-item">
-          <div class="tl-side">
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-card card">
-            <div class="tl-head">
-              <div>
-                <h3>SQA Training</h3>
-                <p class="tl-co">UNDP</p>
-              </div>
-              <div class="tl-right">
-                <span class="tl-period">Jan 2021 — Mar 2021</span>
-              </div>
+        <div class="tl-item reveal" data-delay="80">
+          <div class="tl-side"><div class="tl-dot"></div></div>
+          <div class="tl-body">
+            <div class="tl-hd">
+              <div><h3>SQA Training</h3><span class="tl-co">UNDP</span></div>
+              <div class="tl-right"><span class="tl-period">Jan 2021 — Mar 2021</span></div>
             </div>
-            <ul class="tl-list">
+            <ul class="tl-ul">
               <li>Software quality assurance methodologies and best practices</li>
               <li>Test automation frameworks and structured testing workflows</li>
             </ul>
-            <div class="tags"><span class="t">SQA</span><span class="t">Test Automation</span><span class="t">QA</span></div>
+            <div class="tl-tags"><span>SQA</span><span>Test Automation</span><span>QA</span></div>
           </div>
         </div>
       </div>
@@ -538,28 +466,22 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="sec-label">Contact</div>
-      <h2 class="sec-title">Let's <span class="grad">Connect</span></h2>
-      <p class="sec-sub">Research collaboration, AI projects, or career opportunities — I'd love to hear from you.</p>
+      <div class="sec-tag reveal">Contact</div>
+      <h2 class="sec-title reveal">Let's <em>Connect</em></h2>
+      <p class="sec-sub reveal" data-delay="80">Research collaboration, AI projects, or career opportunities — I'd love to hear from you.</p>
       <div class="contact-wrap">
-        <div class="contact-info">
-          <div class="contact-items">
-            <a href="mailto:majidse0110@gmail.com" class="ci">
-              <div class="ci-ic">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
+        <div class="contact-info reveal" data-delay="120">
+          <div class="ci-list">
+            <a href="mailto:majidse0110@gmail.com" class="ci-item">
+              <div class="ci-ic"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
               <div><span class="ci-lbl">Email</span><span class="ci-val">majidse0110@gmail.com</span></div>
             </a>
-            <a href="tel:+923105288044" class="ci">
-              <div class="ci-ic">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
+            <a href="tel:+923105288044" class="ci-item">
+              <div class="ci-ic"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
               <div><span class="ci-lbl">Phone</span><span class="ci-val">(+92) 310 5288044</span></div>
             </a>
-            <div class="ci">
-              <div class="ci-ic">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div><span class="ci-lbl">Location</span><span class="ci-val">Mardan, Pakistan</span></div>
             </div>
           </div>
@@ -569,29 +491,17 @@
             <a href="https://kaggle.com/majid0110" target="_blank" rel="noopener" class="soc" aria-label="Kaggle"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.336z"/></svg></a>
             <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="soc" aria-label="Google Scholar"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
             <a href="https://researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener" class="soc" aria-label="ResearchGate"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.586 0H4.414A4.414 4.414 0 0 0 0 4.414v15.172A4.414 4.414 0 0 0 4.414 24h15.172A4.414 4.414 0 0 0 24 19.586V4.414A4.414 4.414 0 0 0 19.586 0zm-7.95 18.333c-3.332 0-5.63-2.222-5.63-5.55s2.298-5.546 5.63-5.546c1.547 0 2.84.523 3.836 1.47l-1.596 1.534c-.44-.417-1.183-.89-2.24-.89-1.92 0-3.486 1.586-3.486 3.432s1.566 3.436 3.486 3.436c2.225 0 3.06-1.596 3.19-2.42h-3.19v-1.992h5.336c.057.302.096.6.096.997 0 3.435-2.3 5.53-5.432 5.53z"/></svg></a>
-            <a href="https://x.com/majid_0110" target="_blank" rel="noopener" class="soc" aria-label="X (Twitter)"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://x.com/majid_0110" target="_blank" rel="noopener" class="soc" aria-label="X"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           </div>
         </div>
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xlgwqjqd" method="POST">
+        <form id="contact-form" class="contact-form reveal" data-delay="160" action="https://formspree.io/f/xlgwqjqd" method="POST">
           <div class="form-row">
-            <div class="fg">
-              <label for="f-name">Name</label>
-              <input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name">
-            </div>
-            <div class="fg">
-              <label for="f-email">Email</label>
-              <input type="email" id="f-email" name="email" placeholder="you@email.com" required autocomplete="email">
-            </div>
+            <div class="fg"><label for="f-name">Name</label><input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+            <div class="fg"><label for="f-email">Email</label><input type="email" id="f-email" name="email" placeholder="you@email.com" required autocomplete="email"></div>
           </div>
-          <div class="fg">
-            <label for="f-subject">Subject</label>
-            <input type="text" id="f-subject" name="subject" placeholder="Research collaboration, opportunity...">
-          </div>
-          <div class="fg">
-            <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
-          </div>
-          <button type="submit" id="form-btn" class="btn-primary" style="width:100%;justify-content:center">
+          <div class="fg"><label for="f-subject">Subject</label><input type="text" id="f-subject" name="subject" placeholder="Research collaboration, opportunity..."></div>
+          <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea></div>
+          <button type="submit" id="form-btn" class="btn-primary full">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
             Send Message
           </button>
@@ -605,19 +515,15 @@
   <footer>
     <div class="container">
       <div class="ft-top">
-        <a href="#top" class="logo" aria-label="Back to top"><span>[</span>MK<span>]</span></a>
+        <a href="#top" class="logo" aria-label="Back to top">Majid</a>
         <p>Building intelligent systems at the frontier of AI &amp; research.</p>
-        <nav aria-label="Footer">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#publications">Papers</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+        <nav aria-label="Footer navigation">
+          <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+          <a href="#publications">Papers</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
         </nav>
       </div>
       <div class="ft-bot">
-        <span>&copy; 2025 Majid Khan · Mardan, Pakistan</span>
+        <span>&copy; 2025 Majid Khan &middot; Mardan, Pakistan</span>
         <a href="#top" class="top-btn" aria-label="Scroll to top">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
           Top
@@ -626,6 +532,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

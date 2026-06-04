@@ -1,14 +1,12 @@
 'use strict';
 
-// Enable JS-powered animations only when JS runs (progressive enhancement)
 document.documentElement.classList.add('js');
 
-/* ── Helpers ────────────────────────────────────────────────── */
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* ── Nav scroll + mobile menu ───────────────────────────────── */
+/* ── Nav scroll + mobile menu ── */
 (function () {
   const nav = $('#nav');
   const btn = $('#menu-btn');
@@ -64,7 +62,135 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
   });
 })();
 
-/* ── Role typer ─────────────────────────────────────────────── */
+/* ── Three.js Neural Network Hero ── */
+(function () {
+  const canvas = document.getElementById('webgl');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  if (reduced()) { canvas.style.display = 'none'; return; }
+
+  const W = () => window.innerWidth;
+  const H = () => window.innerHeight;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setSize(W(), H());
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(65, W() / H(), 0.1, 1500);
+  camera.position.set(0, 0, 500);
+
+  const isMobile = window.matchMedia('(max-width:768px)').matches;
+  const N = isMobile ? 70 : 160;
+  const SX = W() * 1.1;
+  const SY = H() * 0.95;
+  const SZ = 260;
+  const MAX_D = 138;
+  const MAX_SEGS = N * 6;
+
+  const nodes = Array.from({ length: N }, () => ({
+    x: (Math.random() - .5) * SX,
+    y: (Math.random() - .5) * SY,
+    z: (Math.random() - .5) * SZ,
+    vx: (Math.random() - .5) * 0.2,
+    vy: (Math.random() - .5) * 0.2,
+    vz: (Math.random() - .5) * 0.06,
+  }));
+
+  /* Points */
+  const pGeo = new THREE.BufferGeometry();
+  const pArr = new Float32Array(N * 3);
+  const pAttr = new THREE.BufferAttribute(pArr, 3);
+  pAttr.setUsage(THREE.DynamicDrawUsage);
+  pGeo.setAttribute('position', pAttr);
+  const ptCloud = new THREE.Points(pGeo, new THREE.PointsMaterial({
+    color: 0xfbbf24, size: isMobile ? 1.8 : 2.5,
+    transparent: true, opacity: 0.8, sizeAttenuation: true,
+  }));
+  scene.add(ptCloud);
+
+  /* Lines */
+  const lGeo = new THREE.BufferGeometry();
+  const lArr = new Float32Array(MAX_SEGS * 6);
+  const lAttr = new THREE.BufferAttribute(lArr, 3);
+  lAttr.setUsage(THREE.DynamicDrawUsage);
+  lGeo.setAttribute('position', lAttr);
+  const lines = new THREE.LineSegments(lGeo, new THREE.LineBasicMaterial({
+    color: 0xd97706, transparent: true, opacity: 0.2,
+  }));
+  scene.add(lines);
+
+  /* Mouse parallax */
+  let tx = 0, ty = 0;
+  document.addEventListener('mousemove', e => {
+    tx = (e.clientX / W() - .5) * 35;
+    ty = -(e.clientY / H() - .5) * 22;
+  });
+
+  let rafId;
+  const heroEl = document.getElementById('top');
+
+  function animate() {
+    rafId = requestAnimationFrame(animate);
+
+    for (let i = 0; i < N; i++) {
+      const n = nodes[i];
+      n.x += n.vx; n.y += n.vy; n.z += n.vz;
+      if (Math.abs(n.x) > SX / 2) n.vx *= -1;
+      if (Math.abs(n.y) > SY / 2) n.vy *= -1;
+      if (Math.abs(n.z) > SZ / 2) n.vz *= -1;
+      pArr[i * 3] = n.x;
+      pArr[i * 3 + 1] = n.y;
+      pArr[i * 3 + 2] = n.z;
+    }
+    pAttr.needsUpdate = true;
+
+    let seg = 0;
+    outer: for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        if (seg >= MAX_SEGS) break outer;
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dz = nodes[i].z - nodes[j].z;
+        if (dx * dx + dy * dy + dz * dz < MAX_D * MAX_D) {
+          const b = seg * 6;
+          lArr[b]   = nodes[i].x; lArr[b+1] = nodes[i].y; lArr[b+2] = nodes[i].z;
+          lArr[b+3] = nodes[j].x; lArr[b+4] = nodes[j].y; lArr[b+5] = nodes[j].z;
+          seg++;
+        }
+      }
+    }
+    lGeo.setDrawRange(0, seg * 2);
+    lAttr.needsUpdate = true;
+
+    camera.position.x += (tx - camera.position.x) * 0.04;
+    camera.position.y += (ty - camera.position.y) * 0.04;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = W() / H();
+    camera.updateProjectionMatrix();
+    renderer.setSize(W(), H());
+  });
+
+  if ('IntersectionObserver' in window && heroEl) {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) animate();
+      else cancelAnimationFrame(rafId);
+    }).observe(heroEl);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(rafId);
+    else animate();
+  });
+})();
+
+/* ── Role typer ── */
 (function () {
   const el = $('#typer');
   if (!el) return;
@@ -86,7 +212,7 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
   setTimeout(tick, 900);
 })();
 
-/* ── Scroll reveal ──────────────────────────────────────────── */
+/* ── Scroll reveal ── */
 (function () {
   if (reduced()) return;
   const els = $$('.reveal');
@@ -99,12 +225,12 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
       setTimeout(() => e.target.classList.add('in'), delay);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
   els.forEach(el => io.observe(el));
 })();
 
-/* ── Counter animation ──────────────────────────────────────── */
+/* ── Counter animation ── */
 (function () {
   const els = $$('.count[data-to]');
   if (!els.length) return;
@@ -132,10 +258,10 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
   els.forEach(el => io.observe(el));
 })();
 
-/* ── Card hover tilt ─────────────────────────────────────────── */
+/* ── Card hover tilt ── */
 (function () {
   if (reduced() || window.matchMedia('(pointer:coarse)').matches) return;
-  $$('.card, .featured-card, .pub-card').forEach(card => {
+  $$('.p-card,.pub-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
@@ -150,7 +276,7 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
   });
 })();
 
-/* ── Contact form ────────────────────────────────────────────── */
+/* ── Contact form ── */
 (function () {
   const form = $('#contact-form');
   const btn  = $('#form-btn');
