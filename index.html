@@ -3,209 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majid Khan — AI/ML Engineer & Researcher</title>
-  <meta name="description" content="Majid Khan is an AI/ML Engineer, Full Stack Developer, and Data Science researcher working on Generative AI, GANs, and healthcare AI.">
-  <meta name="keywords" content="Majid Khan, AI researcher, machine learning engineer, generative AI, GAN researcher, healthcare AI, data scientist, Python developer">
+  <meta name="description" content="Majid Khan — AI/ML Engineer & Researcher specializing in Generative AI, Healthcare Data Synthesis, and Big Data Systems.">
   <meta name="author" content="Majid Khan">
-  <link rel="canonical" href="https://majid0110.github.io/">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Majid Khan — AI/ML Engineer & Researcher">
-  <meta property="og:description" content="Building intelligent systems at the intersection of AI, healthcare, and data science.">
-  <meta property="og:url" content="https://majid0110.github.io/">
+  <meta property="og:description" content="Portfolio of Majid Khan, AI/ML Engineer specializing in Generative AI and Healthcare Data Synthesis.">
   <meta property="og:type" content="website">
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Majid Khan",
-    "url": "https://majid0110.github.io/",
-    "jobTitle": "AI/ML Engineer and Researcher",
-    "sameAs": [
-      "https://github.com/majid0110",
-      "https://www.linkedin.com/in/majid0110",
-      "https://www.kaggle.com/majid0110",
-      "https://scholar.google.com/citations?user=rMFT2MgAAAAJ",
-      "https://www.researchgate.net/profile/Majid-Khan-85",
-      "https://x.com/majid_0110"
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
+  <title>Majid Khan — AI/ML Engineer & Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100'/><text x='50' y='68' font-size='52' font-weight='bold' fill='%23c9a84c' text-anchor='middle' font-family='serif'>M</text></svg>">
 </head>
 <body>
-
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-bar" id="scrollBar"></div>
 
-  <!-- Noise overlay -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo" aria-label="Majid Khan - Home">
-        <span class="logo-mk">MK</span>
-        <span class="logo-sep" aria-hidden="true">·</span>
-        <span class="logo-sub">AI/ML</span>
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>MK<span class="logo-bracket">]</span>
       </a>
-      <div class="nav-links" role="list">
-        <a href="#about" class="nav-link" role="listitem">About</a>
-        <a href="#research" class="nav-link" role="listitem">Research</a>
-        <a href="#projects" class="nav-link" role="listitem">Projects</a>
-        <a href="#publications" class="nav-link" role="listitem">Publications</a>
-        <a href="#experience" class="nav-link" role="listitem">Experience</a>
-        <a href="#contact" class="nav-link nav-link-cta" role="listitem">Contact</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#publications" class="nav-link">Papers</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#research" class="mobile-link">Research</a>
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#publications" class="mobile-link">Publications</a>
-      <a href="#experience" class="mobile-link">Experience</a>
-      <a href="#contact" class="mobile-link">Contact</a>
     </div>
   </nav>
 
-  <!-- ======= HERO ======= -->
-  <section id="home" class="hero" aria-label="Hero section">
-    <div class="hero-grid-bg" aria-hidden="true">
-      <canvas id="heroCanvas"></canvas>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-meta reveal-up" style="--delay:0s">
-        <span class="hero-meta-dot" aria-hidden="true"></span>
-        <span class="hero-meta-text">Available for research collaboration</span>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for Research Collaboration
       </div>
-      <h1 class="hero-name reveal-up" style="--delay:0.1s">
-        <span class="name-line">Majid</span>
-        <span class="name-line accent-line">Khan</span>
-      </h1>
-      <div class="hero-role reveal-up" style="--delay:0.2s">
-        <span class="role-tag" id="roleTyper">AI/ML Engineer</span>
-        <span class="role-cursor" aria-hidden="true">_</span>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Majid Khan</h1>
+      <div class="hero-role-line">
+        <span class="role-dash">—</span>
+        <span class="role-text" id="roleText" aria-label="Current role"></span>
+        <span class="role-cursor" aria-hidden="true"></span>
       </div>
-      <p class="hero-desc reveal-up" style="--delay:0.3s">
-        Building intelligent systems at the intersection of generative AI, healthcare,
-        and scalable software. Currently pursuing dual Master's degrees — Data Science
-        at NUST MISIS (Moscow) and Computer Science from AWKUM (Pakistan).
+      <p class="hero-bio">
+        AI/ML Engineer &amp; Researcher crafting intelligent systems at the intersection of
+        <em>Generative AI</em>, <em>Healthcare Data Synthesis</em>, and <em>Big Data Engineering</em>.
       </p>
-      <div class="hero-actions reveal-up" style="--delay:0.4s">
+      <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">
-          <span>Explore Work</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          View My Work
         </a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
       </div>
-      <div class="hero-stats reveal-up" style="--delay:0.5s" aria-label="Key statistics">
+      <div class="hero-stats">
         <div class="stat">
-          <span class="stat-n">2+</span>
-          <span class="stat-l">MSc Degrees</span>
+          <span class="stat-n" data-count="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-l">Years Exp.</span>
         </div>
-        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-sep"></div>
         <div class="stat">
-          <span class="stat-n">6+</span>
+          <span class="stat-n" data-count="6">0</span>
           <span class="stat-l">Projects</span>
         </div>
-        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-sep"></div>
         <div class="stat">
-          <span class="stat-n">3+</span>
-          <span class="stat-l">Years Exp</span>
+          <span class="stat-n" data-count="2">0</span>
+          <span class="stat-l">MSc Degrees</span>
         </div>
       </div>
     </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>scroll</span>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
     </div>
   </section>
 
-  <!-- ======= ABOUT ======= -->
-  <section id="about" class="section about" aria-labelledby="about-title">
+  <!-- ABOUT -->
+  <section class="section" id="about">
     <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">01</span>
-        <span class="label-text">About</span>
-      </div>
-      <div class="about-layout">
-        <div class="about-left reveal-up" style="--delay:0.1s">
-          <h2 id="about-title" class="section-heading">Bridging Theory <em>&amp; Practice</em></h2>
-          <p class="about-body">
-            I'm a software engineer and AI/ML researcher from Pakistan with a passion
-            for building systems that matter. With expertise spanning machine learning,
-            full-stack development, and cybersecurity, I combine rigorous research
-            methodology with pragmatic engineering.
-          </p>
-          <p class="about-body">
-            My current research focuses on Generative Adversarial Networks for
-            healthcare data synthesis — addressing the critical shortage of
-            privacy-safe medical training data using Conv1D architectures for
-            physiological signal generation.
-          </p>
-          <div class="contact-quick">
-            <a href="mailto:majidse0110@gmail.com" class="contact-quick-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
-              majidse0110@gmail.com
+      <header class="section-head reveal">
+        <span class="tag">About Me</span>
+        <h2>Bridging Research <span class="grad">&amp; Engineering</span></h2>
+      </header>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm an AI/ML Engineer and researcher with dual Master's degrees — currently pursuing <strong>MSc Data Science at NUST MISIS, Moscow</strong> and completing <strong>MSc Computer Science at AWKUM, Pakistan</strong>, where my thesis focuses on Generative Adversarial Networks for privacy-preserving healthcare data synthesis.</p>
+          <p>With 4+ years spanning ML engineering, full-stack development, and certified cybersecurity, I build production-grade AI systems and explore novel deep learning architectures — currently Conv1DTranspose generators paired with InceptionTime discriminators for physiological signal synthesis.</p>
+          <div class="about-chips">
+            <span class="chip chip-gold">CEH Certified</span>
+            <span class="chip">MSc Data Science</span>
+            <span class="chip">GAN Researcher</span>
+            <span class="chip chip-green">Open to Collab</span>
+          </div>
+          <div class="profile-links">
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="profile-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              github.com/majid0110
             </a>
-            <span class="contact-quick-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              Mardan, Pakistan
-            </span>
+            <a href="https://linkedin.com/in/majid0110" target="_blank" rel="noopener" class="profile-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/majid0110
+            </a>
+            <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="profile-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              Google Scholar
+            </a>
           </div>
         </div>
-        <div class="about-right reveal-up" style="--delay:0.2s">
-          <div class="education-card-label">Education</div>
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="tl-marker" aria-hidden="true">
-                <div class="tl-dot active"></div>
-                <div class="tl-line"></div>
-              </div>
-              <div class="tl-body">
-                <span class="tl-year">2025 – 2027</span>
-                <h3 class="tl-degree">MSc in Data Science</h3>
-                <p class="tl-inst">NUST MISIS · Moscow, Russia</p>
-                <p class="tl-focus">Data Science, Machine Learning, Advanced Analytics</p>
+        <div class="about-edu reveal">
+          <h3 class="sub-title">Education</h3>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-marker"><div class="edu-dot"></div></div>
+              <div class="edu-body">
+                <span class="edu-year">2025 — 2027</span>
+                <h4>MSc Data Science</h4>
+                <p class="edu-school">NUST MISIS, Moscow, Russia</p>
+                <p class="edu-note">Advanced ML, Big Data, Research Methods</p>
               </div>
             </div>
-            <div class="tl-item">
-              <div class="tl-marker" aria-hidden="true">
-                <div class="tl-dot"></div>
-                <div class="tl-line"></div>
-              </div>
-              <div class="tl-body">
-                <span class="tl-year">2023 – 2025</span>
-                <h3 class="tl-degree">MSc in Computer Science</h3>
-                <p class="tl-inst">AWKUM · Mardan, Pakistan</p>
-                <p class="tl-focus">AI, Generative Models, Healthcare Data Synthesis</p>
+            <div class="edu-item">
+              <div class="edu-marker"><div class="edu-dot"></div></div>
+              <div class="edu-body">
+                <span class="edu-year">2023 — 2025</span>
+                <h4>MSc Computer Science</h4>
+                <p class="edu-school">AWKUM, Pakistan</p>
+                <p class="edu-note">Thesis: Generative AI &amp; Healthcare Data Synthesis</p>
               </div>
             </div>
-            <div class="tl-item">
-              <div class="tl-marker" aria-hidden="true">
-                <div class="tl-dot"></div>
-              </div>
-              <div class="tl-body">
-                <span class="tl-year">2018 – 2022</span>
-                <h3 class="tl-degree">BSc in Computer Software Engineering</h3>
-                <p class="tl-inst">UET Mardan · Pakistan</p>
-                <p class="tl-focus">Software Engineering, Big Data Focus</p>
+            <div class="edu-item">
+              <div class="edu-marker"><div class="edu-dot"></div></div>
+              <div class="edu-body">
+                <span class="edu-year">2018 — 2022</span>
+                <h4>BSc Software Engineering</h4>
+                <p class="edu-school">UET Mardan, Pakistan</p>
+                <p class="edu-note">Computer Software Engineering</p>
               </div>
             </div>
           </div>
@@ -214,525 +163,455 @@
     </div>
   </section>
 
-  <!-- ======= SKILLS ======= -->
-  <section id="skills" class="section skills" aria-labelledby="skills-title">
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
     <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">02</span>
-        <span class="label-text">Technical Stack</span>
-      </div>
-      <h2 id="skills-title" class="section-heading reveal-up" style="--delay:0.1s">Tools of <em>the Trade</em></h2>
-      <div class="skills-hexgrid reveal-up" style="--delay:0.2s" aria-label="Technical skills">
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">Languages</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">Python</span>
-            <span class="skill-pill tier-1">JavaScript</span>
-            <span class="skill-pill tier-1">TypeScript</span>
-            <span class="skill-pill tier-2">PHP</span>
-            <span class="skill-pill tier-2">SQL</span>
-            <span class="skill-pill tier-2">C++</span>
+      <header class="section-head reveal">
+        <span class="tag">Technical Skills</span>
+        <h2>Tools &amp; <span class="grad">Technologies</span></h2>
+      </header>
+      <div class="skills-grid">
+        <div class="skill-card glass reveal" data-delay="0">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3>AI / Machine Learning</h3>
+          <div class="pills">
+            <span class="pill pill-hi">PyTorch</span><span class="pill pill-hi">GANs</span>
+            <span class="pill">TensorFlow</span><span class="pill">scikit-learn</span>
+            <span class="pill">Keras</span><span class="pill">OpenCV</span>
+            <span class="pill">Pandas</span><span class="pill">NumPy</span>
           </div>
         </div>
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">AI / ML</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">PyTorch</span>
-            <span class="skill-pill tier-1">TensorFlow</span>
-            <span class="skill-pill tier-1">scikit-learn</span>
-            <span class="skill-pill tier-2">Keras</span>
-            <span class="skill-pill tier-2">OpenCV</span>
-            <span class="skill-pill tier-2">Pandas</span>
+        <div class="skill-card glass reveal" data-delay="80">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
+          </div>
+          <h3>Programming Languages</h3>
+          <div class="pills">
+            <span class="pill pill-hi">Python</span><span class="pill">JavaScript</span>
+            <span class="pill">TypeScript</span><span class="pill">PHP</span>
+            <span class="pill">SQL</span><span class="pill">C++</span>
           </div>
         </div>
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">Big Data</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">Apache Kafka</span>
-            <span class="skill-pill tier-1">Spark</span>
-            <span class="skill-pill tier-2">Hadoop</span>
-            <span class="skill-pill tier-2">Hive</span>
-            <span class="skill-pill tier-2">ETL Pipelines</span>
+        <div class="skill-card glass reveal" data-delay="160">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+          </div>
+          <h3>Big Data</h3>
+          <div class="pills">
+            <span class="pill pill-hi">Apache Kafka</span><span class="pill">Apache Spark</span>
+            <span class="pill">Hadoop</span><span class="pill">Hive</span>
+            <span class="pill">ETL Pipelines</span>
           </div>
         </div>
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">Web & DevOps</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">REST APIs</span>
-            <span class="skill-pill tier-1">Angular</span>
-            <span class="skill-pill tier-2">CodeIgniter</span>
-            <span class="skill-pill tier-2">Docker</span>
-            <span class="skill-pill tier-2">Firebase</span>
-            <span class="skill-pill tier-2">Jenkins</span>
+        <div class="skill-card glass reveal" data-delay="0">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <h3>Web &amp; DevOps</h3>
+          <div class="pills">
+            <span class="pill">REST APIs</span><span class="pill pill-hi">Docker</span>
+            <span class="pill">Angular</span><span class="pill">CodeIgniter</span>
+            <span class="pill">Firebase</span><span class="pill">Jenkins</span>
           </div>
         </div>
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">Security</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">Penetration Testing</span>
-            <span class="skill-pill tier-1">CEH Certified</span>
-            <span class="skill-pill tier-2">Burp Suite</span>
-            <span class="skill-pill tier-2">Acunetix</span>
-            <span class="skill-pill tier-2">Security+</span>
+        <div class="skill-card glass reveal" data-delay="80">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <div class="pills">
+            <span class="pill pill-gold">CEH Certified</span>
+            <span class="pill">Penetration Testing</span>
+            <span class="pill">Burp Suite</span><span class="pill">Acunetix</span>
+            <span class="pill">Security+</span>
           </div>
         </div>
-        <div class="skill-pillar">
-          <div class="skill-pillar-label">Visualization</div>
-          <div class="skill-pills">
-            <span class="skill-pill tier-1">Matplotlib</span>
-            <span class="skill-pill tier-1">Plotly</span>
-            <span class="skill-pill tier-2">Seaborn</span>
-            <span class="skill-pill tier-2">Tableau</span>
-            <span class="skill-pill tier-2">Statistical Analysis</span>
+        <div class="skill-card glass reveal" data-delay="160">
+          <div class="sk-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+          </div>
+          <h3>Data Visualization</h3>
+          <div class="pills">
+            <span class="pill">Matplotlib</span><span class="pill pill-hi">Plotly</span>
+            <span class="pill">Seaborn</span><span class="pill">Tableau</span>
+            <span class="pill">Statistical Analysis</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= RESEARCH ======= -->
-  <section id="research" class="section research" aria-labelledby="research-title">
+  <!-- RESEARCH -->
+  <section class="section" id="research">
     <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">03</span>
-        <span class="label-text">Research</span>
-      </div>
-      <h2 id="research-title" class="section-heading reveal-up" style="--delay:0.1s">Areas of <em>Interest</em></h2>
+      <header class="section-head reveal">
+        <span class="tag">Research</span>
+        <h2>Research <span class="grad">Interests</span></h2>
+        <p class="section-sub">Exploring frontiers of AI to solve real-world problems in healthcare, data engineering, and security.</p>
+      </header>
       <div class="research-grid">
-        <article class="research-card reveal-up" style="--delay:0.1s">
-          <div class="rc-number" aria-hidden="true">01</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div class="research-card glass reveal" data-delay="0">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
           </div>
-          <h3 class="rc-title">Generative AI &amp; GANs</h3>
-          <p class="rc-desc">Advanced generative models for synthetic data generation. Exploring Conv1D architectures with InceptionTime discriminators for physiological signal synthesis in healthcare.</p>
-          <div class="rc-tags">
-            <span>GANs</span><span>Conv1D</span><span>Synthesis</span>
+          <h3>Generative AI &amp; GANs</h3>
+          <p>Conv1DTranspose generators with InceptionTime discriminators for high-fidelity physiological signal synthesis in privacy-preserving healthcare settings.</p>
+          <div class="rc-tags"><span>GANs</span><span>Conv1D</span><span>Healthcare</span></div>
+        </div>
+        <div class="research-card glass reveal" data-delay="80">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"/></svg>
           </div>
-        </article>
-        <article class="research-card reveal-up" style="--delay:0.15s">
-          <div class="rc-number" aria-hidden="true">02</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <h3>Deep Learning Architectures</h3>
+          <p>CNN, RNN, and Transformer architectures for sequential data processing, with focus on time-series medical signal analysis and multi-class classification.</p>
+          <div class="rc-tags"><span>CNNs</span><span>Transformers</span><span>Time-Series</span></div>
+        </div>
+        <div class="research-card glass reveal" data-delay="160">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
           </div>
-          <h3 class="rc-title">Deep Learning &amp; Neural Nets</h3>
-          <p class="rc-desc">Designing and optimizing architectures: CNNs, RNNs, Transformers. Special focus on temporal data processing and multi-scale feature extraction.</p>
-          <div class="rc-tags">
-            <span>CNNs</span><span>Transformers</span><span>Optimization</span>
+          <h3>Healthcare AI</h3>
+          <p>Privacy-preserving synthetic EHR generation, physiological signal processing, and ML-driven diagnostics while maintaining full patient data privacy.</p>
+          <div class="rc-tags"><span>EHR</span><span>Privacy</span><span>Signal Processing</span></div>
+        </div>
+        <div class="research-card glass reveal" data-delay="0">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
           </div>
-        </article>
-        <article class="research-card reveal-up" style="--delay:0.2s">
-          <div class="rc-number" aria-hidden="true">03</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <h3>Big Data &amp; Analytics</h3>
+          <p>Real-time data streaming architectures with Apache Kafka and Spark. Building scalable ETL pipelines for enterprise-scale data processing and analytics.</p>
+          <div class="rc-tags"><span>Kafka</span><span>Spark</span><span>ETL</span></div>
+        </div>
+        <div class="research-card glass reveal" data-delay="80">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
           </div>
-          <h3 class="rc-title">Healthcare AI</h3>
-          <p class="rc-desc">Applying ML to clinical data challenges: physiological signal synthesis, medical imaging, privacy-preserving training data generation for medical AI systems.</p>
-          <div class="rc-tags">
-            <span>EHR</span><span>Signals</span><span>Privacy</span>
+          <h3>Cybersecurity Research</h3>
+          <p>Penetration testing methodologies, threat intelligence, and AI-driven vulnerability assessment. CEH certified with enterprise-level security audit experience.</p>
+          <div class="rc-tags"><span>PenTest</span><span>CEH</span><span>Threat Intel</span></div>
+        </div>
+        <div class="research-card glass reveal" data-delay="160">
+          <div class="rc-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"/></svg>
           </div>
-        </article>
-        <article class="research-card reveal-up" style="--delay:0.25s">
-          <div class="rc-number" aria-hidden="true">04</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
-          </div>
-          <h3 class="rc-title">Big Data &amp; Analytics</h3>
-          <p class="rc-desc">Large-scale data processing with Hadoop, Spark, and Kafka. ETL pipeline design, stream processing, and real-time analytics architectures.</p>
-          <div class="rc-tags">
-            <span>Spark</span><span>Kafka</span><span>ETL</span>
-          </div>
-        </article>
-        <article class="research-card reveal-up" style="--delay:0.3s">
-          <div class="rc-number" aria-hidden="true">05</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3 class="rc-title">Cybersecurity</h3>
-          <p class="rc-desc">Application security, penetration testing, and threat intelligence. CEH certified with hands-on experience securing systems for institutions including UET Peshawar and PEC.</p>
-          <div class="rc-tags">
-            <span>PenTest</span><span>CEH</span><span>Threat Intel</span>
-          </div>
-        </article>
-        <article class="research-card reveal-up" style="--delay:0.35s">
-          <div class="rc-number" aria-hidden="true">06</div>
-          <div class="rc-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3 class="rc-title">Full Stack Development</h3>
-          <p class="rc-desc">End-to-end application engineering: REST APIs, microservices, cloud deployment. Bridging ML research into production-ready software systems.</p>
-          <div class="rc-tags">
-            <span>APIs</span><span>Cloud</span><span>DevOps</span>
-          </div>
-        </article>
+          <h3>Full Stack &amp; Cloud</h3>
+          <p>Scalable RESTful microservices and cloud-native applications. CI/CD pipelines with Docker, Firebase, and Jenkins for reliable production deployment.</p>
+          <div class="rc-tags"><span>REST APIs</span><span>Docker</span><span>CI/CD</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= PROJECTS ======= -->
-  <section id="projects" class="section projects" aria-labelledby="projects-title">
+  <!-- PROJECTS -->
+  <section class="section section-alt" id="projects">
     <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">04</span>
-        <span class="label-text">Projects</span>
-      </div>
-      <h2 id="projects-title" class="section-heading reveal-up" style="--delay:0.1s">Featured <em>Work</em></h2>
+      <header class="section-head reveal">
+        <span class="tag">Projects</span>
+        <h2>Featured <span class="grad">Work</span></h2>
+        <p class="section-sub">A selection of research projects and engineering work across AI, data systems, and web development.</p>
+      </header>
 
-      <div class="projects-list">
-        <!-- Project 1 - Featured large -->
-        <article class="project-featured reveal-up" style="--delay:0.15s">
-          <div class="pf-content">
-            <div class="pf-meta">
-              <span class="pf-num">01</span>
-              <span class="pf-category">Research · AI/ML · Healthcare</span>
+      <div class="project-featured glass reveal">
+        <div class="feat-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          Featured Project
+        </div>
+        <div class="feat-grid">
+          <div class="feat-content">
+            <span class="feat-num">01</span>
+            <h3>GAN for Healthcare Data Synthesis</h3>
+            <p>Master's thesis research developing a novel GAN architecture for synthesizing high-fidelity physiological signals. A Conv1DTranspose generator is trained adversarially against an InceptionTime discriminator to produce realistic ECG and EEG data — enabling privacy-preserving training datasets for medical AI without exposing real patient records.</p>
+            <div class="feat-meta">
+              <div class="feat-meta-item"><span class="meta-l">Role</span><span>Lead Researcher</span></div>
+              <div class="feat-meta-item"><span class="meta-l">Institution</span><span>AWKUM, Pakistan</span></div>
+              <div class="feat-meta-item"><span class="meta-l">Status</span><span class="status-pill">In Progress</span></div>
             </div>
-            <h3 class="pf-title">GAN for Healthcare Data Synthesis</h3>
-            <p class="pf-desc">
-              Master's thesis developing a generative adversarial network for high-fidelity synthetic
-              healthcare data. Implements Conv1DTranspose generator with InceptionTime discriminator
-              for temporal physiological signal synthesis — addressing privacy-sensitive medical research challenges.
-            </p>
-            <div class="pf-tags">
-              <span>Python</span><span>PyTorch</span><span>GANs</span><span>Conv1D</span><span>Healthcare AI</span>
+            <div class="tech-row">
+              <span>Python</span><span>PyTorch</span><span>GANs</span><span>Conv1D</span><span>InceptionTime</span>
             </div>
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener noreferrer" class="pf-link">
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="btn btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
-          <div class="pf-visual" aria-hidden="true">
-            <div class="pf-diagram">
-              <div class="diagram-node dn-input">Input<br><span>Noise z</span></div>
-              <div class="diagram-arrow">→</div>
-              <div class="diagram-node dn-gen">Generator<br><span>Conv1DTranspose</span></div>
-              <div class="diagram-arrow">→</div>
-              <div class="diagram-node dn-disc">Discriminator<br><span>InceptionTime</span></div>
-              <div class="diagram-arrow">→</div>
-              <div class="diagram-node dn-out">Output<br><span>Synth Signal</span></div>
+          <div class="feat-diagram" aria-hidden="true">
+            <div class="diag">
+              <div class="diag-node dn-noise"><span class="dn-label">Latent Space</span><span class="dn-sub">z ~ N(0,1)</span></div>
+              <div class="diag-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></div>
+              <div class="diag-node dn-gen"><span class="dn-label">Generator</span><span class="dn-sub">Conv1DTranspose</span></div>
+              <div class="diag-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></div>
+              <div class="diag-node dn-synth"><span class="dn-label">Synthetic Signal</span><span class="dn-sub">ECG / EEG</span></div>
+              <div class="diag-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></div>
+              <div class="diag-node dn-disc"><span class="dn-label">Discriminator</span><span class="dn-sub">InceptionTime</span></div>
+              <div class="diag-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></div>
+              <div class="diag-node dn-out"><span class="dn-label">Real / Fake</span><span class="dn-sub">Adversarial Loss</span></div>
+              <div class="diag-feedback">↩ Gradient Feedback</div>
             </div>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <!-- Projects grid -->
-        <div class="projects-grid-4">
-          <article class="project-card-v2 reveal-up" style="--delay:0.2s">
-            <div class="pcv2-top">
-              <span class="pcv2-num">02</span>
-              <a href="https://github.com/majid0110/hospital" target="_blank" rel="noopener noreferrer" class="pcv2-ext" aria-label="View Hospital Management Dashboard on GitHub">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <div class="pcv2-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 10h6M12 7v6"/></svg>
-            </div>
-            <h3 class="pcv2-title">Hospital Management Dashboard</h3>
-            <p class="pcv2-desc">Web-based platform for patient records, appointments, and billing. Real-time data with PHP CodeIgniter 4.</p>
-            <div class="pcv2-tags"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
-          </article>
+      <div class="proj-grid">
+        <div class="proj-card glass reveal" data-delay="0">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 8h10M7 12h4m1 8-4-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-4 4z"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          </div>
+          <h3>Real-Time Tweet Analysis</h3>
+          <p>Live tweet capture pipeline with NLP-powered sentiment analysis, emotion detection, and social trend monitoring at scale.</p>
+          <div class="tech-row"><span>Python</span><span>Twitter API</span><span>NLP</span><span>Sentiment</span></div>
+        </div>
 
-          <article class="project-card-v2 reveal-up" style="--delay:0.25s">
-            <div class="pcv2-top">
-              <span class="pcv2-num">03</span>
-              <a href="https://github.com/majid0110/Capturing-Live-Tweets-" target="_blank" rel="noopener noreferrer" class="pcv2-ext" aria-label="View Tweet Capture on GitHub">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <div class="pcv2-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </div>
-            <h3 class="pcv2-title">Real-Time Tweet Analysis</h3>
-            <p class="pcv2-desc">Live tweet capture with keyword filtering, NLP sentiment analysis, and data processing pipelines.</p>
-            <div class="pcv2-tags"><span>Python</span><span>Twitter API</span><span>NLP</span></div>
-          </article>
+        <div class="proj-card glass reveal" data-delay="80">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          </div>
+          <h3>Kafka Streaming System</h3>
+          <p>High-throughput real-time message streaming with Apache Kafka, achieving sub-100ms latency for large-scale distributed data pipelines.</p>
+          <div class="tech-row"><span>Kafka</span><span>Python</span><span>Streaming</span><span>Distributed</span></div>
+        </div>
 
-          <article class="project-card-v2 reveal-up" style="--delay:0.3s">
-            <div class="pcv2-top">
-              <span class="pcv2-num">04</span>
-              <a href="https://github.com/majid0110/Kafka-Producer-and-consumers" target="_blank" rel="noopener noreferrer" class="pcv2-ext" aria-label="View Kafka System on GitHub">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <div class="pcv2-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h3 class="pcv2-title">Kafka Streaming System</h3>
-            <p class="pcv2-desc">High-performance message streaming with Apache Kafka. Producer-consumer patterns for real-time data pipelines.</p>
-            <div class="pcv2-tags"><span>Kafka</span><span>Python</span><span>Streaming</span></div>
-          </article>
+        <div class="proj-card glass reveal" data-delay="160">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          </div>
+          <h3>Hospital Management Dashboard</h3>
+          <p>Full-featured web platform for patient records, appointments, billing, and staff management with role-based access control.</p>
+          <div class="tech-row"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Bootstrap</span></div>
+        </div>
 
-          <article class="project-card-v2 reveal-up" style="--delay:0.35s">
-            <div class="pcv2-top">
-              <span class="pcv2-num">05</span>
-              <a href="https://github.com/majid0110" target="_blank" rel="noopener noreferrer" class="pcv2-ext" aria-label="View Car Washing Service on GitHub">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <div class="pcv2-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
-            </div>
-            <h3 class="pcv2-title">Car Washing Service App</h3>
-            <p class="pcv2-desc">Full-featured booking platform with payment integration and admin tools. Built with Angular and Firebase.</p>
-            <div class="pcv2-tags"><span>Angular</span><span>Firebase</span><span>TypeScript</span></div>
-          </article>
+        <div class="proj-card glass reveal" data-delay="0">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          </div>
+          <h3>Car Washing Service App</h3>
+          <p>Cross-platform booking app with real-time scheduling, Stripe payment integration, and push notifications for service updates.</p>
+          <div class="tech-row"><span>Angular</span><span>Firebase</span><span>TypeScript</span><span>Stripe</span></div>
+        </div>
 
-          <article class="project-card-v2 reveal-up" style="--delay:0.4s">
-            <div class="pcv2-top">
-              <span class="pcv2-num">06</span>
-              <a href="https://github.com/majid0110" target="_blank" rel="noopener noreferrer" class="pcv2-ext" aria-label="View ProViewGolf API on GitHub">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <div class="pcv2-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 class="pcv2-title">ProViewGolf REST API</h3>
-            <p class="pcv2-desc">RESTful API for golf course data, player scoring, and stats. Proper authentication, validation, and DB optimization.</p>
-            <div class="pcv2-tags"><span>PHP</span><span>CodeIgniter</span><span>PostgreSQL</span></div>
-          </article>
+        <div class="proj-card glass reveal" data-delay="80">
+          <div class="pc-head">
+            <div class="pc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg></div>
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="pc-gh" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          </div>
+          <h3>ProViewGolf REST API</h3>
+          <p>Scalable RESTful API serving golf course data, player stats, and tournament management with optimized PostgreSQL queries and caching.</p>
+          <div class="tech-row"><span>PHP</span><span>CodeIgniter</span><span>PostgreSQL</span><span>REST</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= PUBLICATIONS ======= -->
-  <section id="publications" class="section publications" aria-labelledby="pub-title">
+  <!-- PUBLICATIONS -->
+  <section class="section" id="publications">
     <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">05</span>
-        <span class="label-text">Publications</span>
-      </div>
-      <h2 id="pub-title" class="section-heading reveal-up" style="--delay:0.1s">Research <em>Output</em></h2>
-      <div class="pub-list reveal-up" style="--delay:0.2s">
-        <article class="pub-item">
-          <div class="pub-badge">In Progress</div>
-          <div class="pub-body">
-            <h3 class="pub-title">
-              High-Fidelity Physiological Signal Synthesis Using Generative Adversarial Networks with Conv1DTranspose Generator and InceptionTime Discriminator
-            </h3>
-            <p class="pub-authors">
-              <strong>Majid Khan</strong><sup>1</sup>, Rahim Khan<sup>2</sup>
-            </p>
-            <p class="pub-venue">Department of Computer Science, Abdul Wali Khan University Mardan, Pakistan</p>
-            <p class="pub-abstract">
-              A novel GAN architecture for generating high-fidelity synthetic physiological signals, combining
-              a Conv1DTranspose generator optimized for temporal data with an InceptionTime discriminator.
-              Addresses the critical need for privacy-safe synthetic healthcare data in medical AI research.
-            </p>
-            <div class="pub-meta">
-              <span class="pub-meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 4v5"/></svg>
-                Affiliation: AWKUM, Pakistan
-              </span>
-              <span class="pub-meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
-                majidse0110@gmail.com
-              </span>
-            </div>
-          </div>
-          <div class="pub-links">
-            <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=rMFT2MgAAAAJ" target="_blank" rel="noopener noreferrer" class="pub-link">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener noreferrer" class="pub-link">ResearchGate</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= EXPERIENCE ======= -->
-  <section id="experience" class="section experience" aria-labelledby="exp-title">
-    <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">06</span>
-        <span class="label-text">Experience</span>
-      </div>
-      <h2 id="exp-title" class="section-heading reveal-up" style="--delay:0.1s">Professional <em>Journey</em></h2>
-      <div class="exp-timeline reveal-up" style="--delay:0.2s">
-        <article class="exp-item active">
-          <div class="exp-period">
-            <span class="exp-dates">Jan 2023 – Present</span>
-            <div class="exp-bar"></div>
-          </div>
-          <div class="exp-content">
-            <div class="exp-header">
-              <h3 class="exp-role">ML Engineer / Programmer</h3>
-              <span class="exp-company">RegexByte IT Solutions &amp; Consultancy · Mardan, Pakistan</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Developing machine learning pipelines for data analysis and prediction models</li>
-              <li>Full-stack application development using modern frameworks and technologies</li>
-              <li>Leading AI/ML research initiatives and proof-of-concept projects</li>
-              <li>Mentoring junior developers and contributing to technical documentation</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="exp-item">
-          <div class="exp-period">
-            <span class="exp-dates">Feb 2024 – Jul 2024</span>
-            <div class="exp-bar"></div>
-          </div>
-          <div class="exp-content">
-            <div class="exp-header">
-              <h3 class="exp-role">Penetration Tester</h3>
-              <span class="exp-company">Secure Purple · Pakistan</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Conducted comprehensive penetration testing for UET Peshawar, PEC, and others</li>
-              <li>Performed threat intelligence gathering and vulnerability assessment</li>
-              <li>Analyzed dark web data for emerging cybersecurity threats</li>
-              <li>Developed detailed security reports and remediation recommendations</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="exp-item">
-          <div class="exp-period">
-            <span class="exp-dates">Jul 2022 – Sep 2022</span>
-            <div class="exp-bar"></div>
-          </div>
-          <div class="exp-content">
-            <div class="exp-header">
-              <h3 class="exp-role">Programmer Intern</h3>
-              <span class="exp-company">Mindstorm Studios · Lahore, Pakistan</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Assisted in full-stack development of multiple web applications</li>
-              <li>Implemented responsive UI/UX designs and frontend components</li>
-              <li>Contributed to backend development and database optimization</li>
-              <li>Participated in code reviews and agile development practices</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="exp-item">
-          <div class="exp-period">
-            <span class="exp-dates">Jan 2021 – Mar 2021</span>
-            <div class="exp-bar"></div>
-          </div>
-          <div class="exp-content">
-            <div class="exp-header">
-              <h3 class="exp-role">SQA Training</h3>
-              <span class="exp-company">UNDP · Islamabad, Pakistan</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Comprehensive training in software quality assurance for mobile applications</li>
-              <li>Testing methodologies, automation, and structured bug reporting practices</li>
-              <li>Hands-on experience with testing frameworks and tools</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= CONTACT ======= -->
-  <section id="contact" class="section contact" aria-labelledby="contact-title">
-    <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-num">07</span>
-        <span class="label-text">Contact</span>
-      </div>
-      <h2 id="contact-title" class="section-heading reveal-up" style="--delay:0.1s">Let's <em>Connect</em></h2>
-      <div class="contact-layout">
-        <div class="contact-left reveal-up" style="--delay:0.2s">
-          <p class="contact-intro">
-            Open to research collaborations, engineering roles, and conversations
-            about AI/ML. Drop me a line — I read every message.
-          </p>
-          <div class="contact-details">
-            <a href="mailto:majidse0110@gmail.com" class="contact-detail-item">
-              <div class="cdi-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
-              </div>
-              <div>
-                <span class="cdi-label">Email</span>
-                <span class="cdi-value">majidse0110@gmail.com</span>
-              </div>
-            </a>
-            <div class="contact-detail-item">
-              <div class="cdi-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <span class="cdi-label">Phone</span>
-                <span class="cdi-value">(+92) 310 5288044</span>
-              </div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="cdi-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span class="cdi-label">Location</span>
-                <span class="cdi-value">Mardan, KPK, Pakistan</span>
-              </div>
-            </div>
-          </div>
-          <div class="social-row" aria-label="Social and academic profiles">
-            <a href="https://github.com/majid0110" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/majid0110" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://www.kaggle.com/majid0110" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kaggle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"/></svg>
-            </a>
-            <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=rMFT2MgAAAAJ" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Google Scholar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-            </a>
-            <a href="https://www.researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="ResearchGate">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.193 12.193 0 0 0-.32 2.256 22.646 22.646 0 0 0-.059 1.841v1.084c-.018.96.008 1.967.056 3.028.056 1.083.167 2.15.333 3.2.167 1.05.408 1.938.725 2.66.316.723.783 1.29 1.398 1.7.616.408 1.4.614 2.353.614 1.39 0 2.405-.395 3.04-1.18.637-.786.956-1.918.956-3.396V13.38c0-.282-.046-.453-.139-.513l-2.71-1.52c-.082-.047-.155-.049-.224 0-.066.049-.098.12-.098.213v1.1c0 .524-.11.99-.329 1.396a2.168 2.168 0 0 1-.893.9c-.375.207-.79.31-1.245.31-.537 0-.998-.147-1.384-.44-.386-.294-.673-.716-.862-1.268a8.5 8.5 0 0 1-.31-2.065 50.455 50.455 0 0 1-.058-2.585 40.35 40.35 0 0 1 .102-2.542c.095-.848.262-1.543.502-2.085.24-.542.566-.954.977-1.235.41-.281.914-.422 1.512-.422.497 0 .922.098 1.273.293.35.196.623.476.82.84.197.363.313.79.346 1.277.033.488.013.978.013 1.47V8.64c0 .094.036.17.11.228.072.057.15.085.234.085.083 0 .153-.028.213-.085l2.523-1.435c.093-.06.14-.15.14-.27a9.22 9.22 0 0 0-.234-2.01 6.51 6.51 0 0 0-.756-1.885C21.693.617 20.716 0 19.586 0zM1.81 1.63C.81 1.63 0 2.44 0 3.44v17.12C0 21.56.81 22.37 1.81 22.37h17.12c1 0 1.81-.81 1.81-1.81V3.44c0-1-.81-1.81-1.81-1.81H1.81zm7.23 4.79h4.61c.56 0 1.07.05 1.51.16.44.11.82.28 1.14.5.31.23.54.52.68.87.15.35.22.75.22 1.2 0 .32-.05.62-.15.9a2.29 2.29 0 0 1-.43.73c-.19.21-.41.39-.68.53-.27.14-.57.24-.91.31l3.02 4.08H15.4l-2.76-3.82h-1.55v3.82H8.99V6.42h.05z"/></svg>
-            </a>
-            <a href="https://x.com/majid_0110" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X / Twitter">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
+      <header class="section-head reveal">
+        <span class="tag">Publications</span>
+        <h2>Research <span class="grad">Papers</span></h2>
+      </header>
+      <div class="pub-card glass reveal">
+        <div class="pub-top">
+          <span class="pub-badge">Under Review · 2025</span>
+          <div class="pub-top-links">
+            <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="btn btn-sm btn-ghost-sm">Google Scholar</a>
+            <a href="https://researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener" class="btn btn-sm btn-ghost-sm">ResearchGate</a>
           </div>
         </div>
-        <div class="contact-right reveal-up" style="--delay:0.25s">
-          <form class="contact-form" action="https://formspree.io/f/xlgwqjqd" method="POST" aria-label="Contact form">
+        <h3 class="pub-title">High-Fidelity Physiological Signal Synthesis Using Generative Adversarial Networks with Conv1DTranspose Generator and InceptionTime Discriminator</h3>
+        <p class="pub-authors">
+          <strong>Majid Khan</strong> &amp; Rahim Khan
+          <span class="pub-affil">— Department of Computer Science, AWKUM, Pakistan</span>
+        </p>
+        <p class="pub-abstract">This research presents a novel GAN framework for synthesizing realistic physiological signals (ECG, EEG) using a Conv1DTranspose generator paired with an InceptionTime-based discriminator. The approach addresses the critical challenge of limited medical data availability while preserving patient privacy through high-quality synthetic data generation for healthcare AI applications.</p>
+        <div class="pub-kws">
+          <span>Generative Adversarial Networks</span>
+          <span>Physiological Signal Synthesis</span>
+          <span>Conv1DTranspose</span>
+          <span>InceptionTime</span>
+          <span>Healthcare AI</span>
+          <span>Privacy-Preserving ML</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <header class="section-head reveal">
+        <span class="tag">Experience</span>
+        <h2>Professional <span class="grad">Journey</span></h2>
+      </header>
+      <div class="exp-timeline">
+        <div class="exp-item reveal" data-delay="0">
+          <div class="exp-side">
+            <div class="exp-dot exp-dot-active"></div>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body glass">
+            <div class="exp-hd">
+              <div><h3>ML Engineer / Programmer</h3><p class="exp-co">RegexByte IT Solutions</p></div>
+              <div class="exp-right"><span class="exp-period">Jan 2023 — Present</span><span class="exp-now">Current</span></div>
+            </div>
+            <ul class="exp-ul">
+              <li>Designed and deployed production ML pipelines for real-world data processing at scale</li>
+              <li>Led full-stack development of AI-integrated web applications and REST APIs</li>
+              <li>Conducted applied AI/ML research and mentored junior engineers</li>
+              <li>Built microservices with Docker and Jenkins CI/CD for reliable deployment</li>
+            </ul>
+            <div class="tech-row"><span>Python</span><span>PyTorch</span><span>REST APIs</span><span>Docker</span><span>Jenkins</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal" data-delay="80">
+          <div class="exp-side">
+            <div class="exp-dot"></div>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body glass">
+            <div class="exp-hd">
+              <div><h3>Penetration Tester</h3><p class="exp-co">Secure Purple</p></div>
+              <div class="exp-right"><span class="exp-period">Feb 2024 — Jul 2024</span></div>
+            </div>
+            <ul class="exp-ul">
+              <li>Conducted penetration testing engagements for UET Peshawar and PEC</li>
+              <li>Performed threat intelligence analysis and comprehensive vulnerability assessments</li>
+              <li>Delivered actionable security reports with remediation roadmaps</li>
+            </ul>
+            <div class="tech-row"><span>Burp Suite</span><span>Acunetix</span><span>Kali Linux</span><span>OWASP</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal" data-delay="160">
+          <div class="exp-side">
+            <div class="exp-dot"></div>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body glass">
+            <div class="exp-hd">
+              <div><h3>Programmer Intern</h3><p class="exp-co">Mindstorm Studios</p></div>
+              <div class="exp-right"><span class="exp-period">Jul 2022 — Sep 2022</span></div>
+            </div>
+            <ul class="exp-ul">
+              <li>Built responsive full-stack web applications with modern UI/UX practices</li>
+              <li>Optimized backend performance and database query efficiency</li>
+            </ul>
+            <div class="tech-row"><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>CSS3</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal" data-delay="240">
+          <div class="exp-side">
+            <div class="exp-dot"></div>
+          </div>
+          <div class="exp-body glass">
+            <div class="exp-hd">
+              <div><h3>SQA Training</h3><p class="exp-co">UNDP</p></div>
+              <div class="exp-right"><span class="exp-period">Jan 2021 — Mar 2021</span></div>
+            </div>
+            <ul class="exp-ul">
+              <li>Software quality assurance methodologies and best practices</li>
+              <li>Test automation frameworks and structured manual testing workflows</li>
+            </ul>
+            <div class="tech-row"><span>SQA</span><span>Test Automation</span><span>QA Methodologies</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <header class="section-head reveal">
+        <span class="tag">Contact</span>
+        <h2>Let's <span class="grad">Connect</span></h2>
+        <p class="section-sub">Looking to collaborate on research, discuss AI projects, or explore opportunities — I'd love to hear from you.</p>
+      </header>
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="contact-items">
+            <a href="mailto:majidse0110@gmail.com" class="contact-item">
+              <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><span class="ci-l">Email</span><span class="ci-v">majidse0110@gmail.com</span></div>
+            </a>
+            <a href="tel:+923105288044" class="contact-item">
+              <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><span class="ci-l">Phone</span><span class="ci-v">(+92) 310 5288044</span></div>
+            </a>
+            <div class="contact-item">
+              <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><span class="ci-l">Location</span><span class="ci-v">Mardan, Pakistan</span></div>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/majid0110" target="_blank" rel="noopener" class="social" aria-label="GitHub"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://linkedin.com/in/majid0110" target="_blank" rel="noopener" class="social" aria-label="LinkedIn"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://kaggle.com/majid0110" target="_blank" rel="noopener" class="social" aria-label="Kaggle"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.336z"/></svg></a>
+            <a href="https://scholar.google.com/citations?user=rMFT2MgAAAAJ" target="_blank" rel="noopener" class="social" aria-label="Google Scholar"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+            <a href="https://researchgate.net/profile/Majid-Khan-85" target="_blank" rel="noopener" class="social" aria-label="ResearchGate"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0H4.414A4.414 4.414 0 0 0 0 4.414v15.172A4.414 4.414 0 0 0 4.414 24h15.172A4.414 4.414 0 0 0 24 19.586V4.414A4.414 4.414 0 0 0 19.586 0zm-7.95 18.333c-3.332 0-5.63-2.222-5.63-5.55s2.298-5.546 5.63-5.546c1.547 0 2.84.523 3.836 1.47l-1.596 1.534c-.44-.417-1.183-.89-2.24-.89-1.92 0-3.486 1.586-3.486 3.432s1.566 3.436 3.486 3.436c2.225 0 3.06-1.596 3.19-2.42h-3.19v-1.992h5.336c.057.302.096.6.096.997 0 3.435-2.3 5.53-5.432 5.53z"/></svg></a>
+            <a href="https://x.com/majid_0110" target="_blank" rel="noopener" class="social" aria-label="X (Twitter)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-right reveal">
+          <form class="contact-form glass" id="contactForm" action="https://formspree.io/f/xlgwqjqd" method="POST">
             <div class="form-row">
               <div class="form-group">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your name" class="form-input" autocomplete="name">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name">
               </div>
               <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com" class="form-input" autocomplete="email">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
               </div>
             </div>
             <div class="form-group">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" name="subject" required placeholder="Research collaboration, job opportunity..." class="form-input">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Research collaboration, opportunity...">
             </div>
             <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or opportunity..." class="form-input form-textarea"></textarea>
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              <span>Send Message</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8l12-6-6 12V8H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Send Message
             </button>
+            <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= FOOTER ======= -->
-  <footer class="footer" role="contentinfo">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo">MK</span>
-          <span class="footer-tagline">AI/ML Engineer &amp; Researcher</span>
-        </div>
-        <p class="footer-copy">&copy; 2025 Majid Khan. Crafted with care.</p>
-        <div class="footer-links" aria-label="Footer quick links">
-          <a href="#home" class="footer-link">Home</a>
-          <a href="#projects" class="footer-link">Projects</a>
-          <a href="#contact" class="footer-link">Contact</a>
-        </div>
+      <div class="footer-top">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">
+          <span class="logo-bracket">[</span>MK<span class="logo-bracket">]</span>
+        </a>
+        <p class="footer-tag">Building intelligent systems at the frontier of AI &amp; research.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Papers</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bot">
+        <p>&copy; 2025 Majid Khan · Mardan, Pakistan</p>
+        <a href="#hero" class="back-top" aria-label="Scroll to top">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+          Top
+        </a>
       </div>
     </div>
   </footer>
