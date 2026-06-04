@@ -177,16 +177,9 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
     renderer.setSize(W(), H());
   });
 
-  if ('IntersectionObserver' in window && heroEl) {
-    new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) animate();
-      else cancelAnimationFrame(rafId);
-    }).observe(heroEl);
-  }
-
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) cancelAnimationFrame(rafId);
-    else animate();
+    else { cancelAnimationFrame(rafId); animate(); }
   });
 })();
 
@@ -194,30 +187,64 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
 (function () {
   const el = $('#typer');
   if (!el) return;
-  const roles = ['AI/ML Engineer', 'GAN Researcher', 'Data Science Researcher', 'Full Stack Developer', 'Cybersecurity Analyst'];
-  let ri = 0, ci = 0, del = false;
+
+  const roles = [
+    'AI/ML Engineer',
+    'GAN Researcher',
+    'Data Science Researcher',
+    'Full Stack Developer',
+    'Cybersecurity Analyst',
+  ];
+
+  /* If reduced motion: just show the first role statically */
+  if (reduced()) {
+    el.textContent = roles[0];
+    return;
+  }
+
+  let ri = 0, ci = 0, deleting = false;
 
   function tick() {
-    const r = roles[ri];
-    if (!del) {
-      el.textContent = r.slice(0, ++ci);
-      if (ci === r.length) { del = true; return setTimeout(tick, 2200); }
-      setTimeout(tick, 72);
+    const word = roles[ri];
+    if (!deleting) {
+      el.textContent = word.slice(0, ++ci);
+      if (ci === word.length) {
+        deleting = true;
+        setTimeout(tick, 2000);
+      } else {
+        setTimeout(tick, 75);
+      }
     } else {
-      el.textContent = r.slice(0, --ci);
-      if (ci === 0) { del = false; ri = (ri + 1) % roles.length; return setTimeout(tick, 350); }
-      setTimeout(tick, 34);
+      el.textContent = word.slice(0, --ci);
+      if (ci === 0) {
+        deleting = false;
+        ri = (ri + 1) % roles.length;
+        setTimeout(tick, 400);
+      } else {
+        setTimeout(tick, 38);
+      }
     }
   }
-  setTimeout(tick, 900);
+
+  /* Start after a short delay so the hero animation has begun */
+  setTimeout(tick, 600);
 })();
 
 /* ── Scroll reveal ── */
 (function () {
-  if (reduced()) return;
   const els = $$('.reveal');
   if (!els.length) return;
 
+  /* Reduced-motion: show everything immediately, no animation */
+  if (reduced()) {
+    els.forEach(el => el.classList.add('in'));
+    return;
+  }
+
+  /* Safety net: anything still hidden after 2.5 s gets shown */
+  setTimeout(() => $$('.reveal:not(.in)').forEach(el => el.classList.add('in')), 2500);
+
+  /* threshold 0 = trigger the instant any pixel enters viewport */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -225,7 +252,7 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
       setTimeout(() => e.target.classList.add('in'), delay);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  }, { threshold: 0 });
 
   els.forEach(el => io.observe(el));
 })();

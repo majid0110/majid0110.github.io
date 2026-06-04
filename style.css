@@ -63,6 +63,10 @@ section{padding:100px 0}
 .js .reveal.in{opacity:1;transform:none}
 
 /* ── Hero CSS animations (no JS dep) ── */
+/* Explicit defaults — visible without animation */
+.hero-badge,.hero-eye,header h1,.typer-wrap,.hero-lead,.hero-actions,.hero-stats{
+  opacity:1;transform:none;
+}
 @media(prefers-reduced-motion:no-preference){
   .hero-badge  {animation:hFade .6s var(--ease) .1s both}
   .hero-eye    {animation:hFade .6s var(--ease) .18s both}
