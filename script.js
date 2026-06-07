@@ -66,7 +66,6 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
 (function () {
   const canvas = document.getElementById('webgl');
   if (!canvas || typeof THREE === 'undefined') return;
-
   if (reduced()) { canvas.style.display = 'none'; return; }
 
   const W = () => window.innerWidth;
@@ -97,30 +96,27 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
     vz: (Math.random() - .5) * 0.06,
   }));
 
-  /* Points */
   const pGeo = new THREE.BufferGeometry();
   const pArr = new Float32Array(N * 3);
   const pAttr = new THREE.BufferAttribute(pArr, 3);
   pAttr.setUsage(THREE.DynamicDrawUsage);
   pGeo.setAttribute('position', pAttr);
   const ptCloud = new THREE.Points(pGeo, new THREE.PointsMaterial({
-    color: 0xfbbf24, size: isMobile ? 1.8 : 2.5,
-    transparent: true, opacity: 0.8, sizeAttenuation: true,
+    color: 0xa78bfa, size: isMobile ? 1.8 : 2.5,
+    transparent: true, opacity: 0.85, sizeAttenuation: true,
   }));
   scene.add(ptCloud);
 
-  /* Lines */
   const lGeo = new THREE.BufferGeometry();
   const lArr = new Float32Array(MAX_SEGS * 6);
   const lAttr = new THREE.BufferAttribute(lArr, 3);
   lAttr.setUsage(THREE.DynamicDrawUsage);
   lGeo.setAttribute('position', lAttr);
   const lines = new THREE.LineSegments(lGeo, new THREE.LineBasicMaterial({
-    color: 0xd97706, transparent: true, opacity: 0.2,
+    color: 0x818cf8, transparent: true, opacity: 0.22,
   }));
   scene.add(lines);
 
-  /* Mouse parallax */
   let tx = 0, ty = 0;
   document.addEventListener('mousemove', e => {
     tx = (e.clientX / W() - .5) * 35;
@@ -128,7 +124,6 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
   });
 
   let rafId;
-  const heroEl = document.getElementById('top');
 
   function animate() {
     rafId = requestAnimationFrame(animate);
@@ -196,11 +191,7 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
     'Cybersecurity Analyst',
   ];
 
-  /* If reduced motion: just show the first role statically */
-  if (reduced()) {
-    el.textContent = roles[0];
-    return;
-  }
+  if (reduced()) { el.textContent = roles[0]; return; }
 
   let ri = 0, ci = 0, deleting = false;
 
@@ -226,35 +217,7 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
     }
   }
 
-  /* Start after a short delay so the hero animation has begun */
   setTimeout(tick, 600);
-})();
-
-/* ── Scroll reveal ── */
-(function () {
-  const els = $$('.reveal');
-  if (!els.length) return;
-
-  /* Reduced-motion: show everything immediately, no animation */
-  if (reduced()) {
-    els.forEach(el => el.classList.add('in'));
-    return;
-  }
-
-  /* Safety net: anything still hidden after 2.5 s gets shown */
-  setTimeout(() => $$('.reveal:not(.in)').forEach(el => el.classList.add('in')), 2500);
-
-  /* threshold 0 = trigger the instant any pixel enters viewport */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const delay = parseInt(e.target.dataset.delay || 0);
-      setTimeout(() => e.target.classList.add('in'), delay);
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0 });
-
-  els.forEach(el => io.observe(el));
 })();
 
 /* ── Counter animation ── */
@@ -288,12 +251,12 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion:reduce)').match
 /* ── Card hover tilt ── */
 (function () {
   if (reduced() || window.matchMedia('(pointer:coarse)').matches) return;
-  $$('.p-card,.pub-card').forEach(card => {
+  $$('.sk-card,.proj-card,.r-card,.tl-card,.pub-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
       const y = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
-      card.style.transform = `perspective(900px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-3px)`;
+      card.style.transform = `perspective(900px) rotateY(${x * 3}deg) rotateX(${-y * 3}deg) translateY(-3px)`;
     });
     card.addEventListener('mouseleave', () => {
       card.style.transition = 'transform .5s cubic-bezier(0,.55,.45,1)';
